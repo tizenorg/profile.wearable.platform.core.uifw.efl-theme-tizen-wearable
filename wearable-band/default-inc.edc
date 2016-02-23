@@ -1,0 +1,893 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ * BSD 2-Clause License (http://www.opensource.org/licenses/bsd-license.php)
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ *   1. Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+//****************************************************************************//
+// This file defines the width, height (not color!) for each widgets
+// We can define different INC file by Resolution (HD, WVGA, HVGA)
+//
+// ************* Naming Rule ************ //
+// {WIDGET}_{GROUP}_{PART}_{STATE}_{TYPE}_INC
+//   WIDGET: NAVIFRAME, LIST, DATETIME, POPUP, etc.
+//   GROUP:  INDEX
+//   PART:   TEXT, ICON, BG, PADDING, DIVIDER, ICON, etc.
+//   STATE:  LEFT, RIGHT, TOP, BOTTOM, MIN, MAX,
+//   TYPE:   HEIGHT, WIDTH, SIZE
+//   INC:    EVERY DEFINE VALUE IN inc.edc FILE MUST END WITH A PREFIX "_INC"
+// e.g. LIST_PADDING_LEFT_WIDTH
+//****************************************************************************//
+#define GLIDE_OUT(duration) CUBIC_BEZIER (duration) 0.25 0.46 0.45 1.0
+// ***************************** Button ***************************************/
+#define BUTTON_DEFAULT_BG_MIN_SIZE_INC                               40 64
+#define BUTTON_DEFAULT_BG_VISIBLE_MIN_SIZE_INC                       66 118
+#define BUTTON_DEFAULT_BG_ICON_ONLY_MIN_SIZE_INC                     66 78
+#define BUTTON_DEFAULT_LEFT_TOP_PADDING_SIZE_INC                     6 12
+#define BUTTON_DEFAULT_RIGHT_BOTTOM_PADDING_SIZE_INC                 6 12
+#define BUTTON_DEFAULT_TEXT_SIZE_INC                                 30
+#define BUTTON_BODY_TEXTBLOCK_MIN_SIZE_INC                           196 0
+#define BUTTON_BOTTOM_BG_MIN_SIZE_INC                                40 64
+#define BUTTON_BOTTOM_ICON_SIZE_INC                                  54 54
+#define BUTTON_MORE_BG_MIN_SIZE_INC                                  40 64
+#define BUTTON_MORE_TEXT_SIZE_INC                                    30
+#define BUTTON_MORE_TEXTBLOCK_MIN_SIZE_INC                           204 0
+#define BUTTON_DATETIME_TIME_AMPM_BG_SIZE_INC                        105 80
+#define BUTTON_DATETIME_TIME_AMPM_TEXT_SIZE_INC                      34
+#define BUTTON_SPINNER_HORIZONTAL_TEXT_SIZE_INC                      40
+#define BUTTON_SPINNER_VERTICAL_TEXT_SIZE_INC                        72
+// ***************************** Check ****************************************/
+#define CHECK_DEFAULT_BASE_MIN_SIZE_INC                              72 72
+#define CHECK_DEFAULT_CHECK_MAX_SIZE_INC                             72 72
+#define CHECK_ONOFF_BASE_MIN_SIZE_INC                                72 72
+#define CHECK_ONOFF_CHECK_MAX_SIZE_INC                               72 72
+
+// ***************************** Datetime *************************************/
+#define DATETIME_BG_SIZE_INC                                         216 312
+#define DATETIME_FIELD_HEIGHT_INC                                    88
+#define DATETIME_CENTER_PADDING_HEIGHT_INC                           24
+#define DATETIME_TIME_24HR_TOP_PADDING_HEIGHT_INC                    56
+#define DATETIME_TIME_AMPM_FIELD_HEIGHT_INC                          80
+#define DATETIME_TIME_AMPM_FIELD_PADDING_HEIGHT_INC                  32
+
+// ***************************** Spinner **************************************/
+#define SPINNER_UNIT_TEXT_SIZE_INC                                    28
+#define SPINNER_HORIZONTAL_BG_MIN_SIZE_INC                            216 88
+#define SPINNER_HORIZONTAL_BG_MAX_SIZE_INC                            -1 88
+#define SPINNER_HORIZONTAL_ARROW_SIZE_INC                             60 60
+#define SPINNER_HORIZONTAL_TEXT_HEIGHT_INC                            60
+#define SPINNER_HORIZONTAL_TITLE_TEXT_HEIGHT_INC                      36
+#define SPINNER_VERTICAL_BG_MIN_SIZE_INC                              216 300
+#define SPINNER_VERTICAL_ARROW_SIZE_INC                               84 84
+#define SPINNER_VERTICAL_TEXT_HEIGHT_INC                              90
+#define SPINNER_VERTICAL_UNIT_CENTER_TOP_PADDING_HEIGHT_INC           7
+#define SPINNER_VERTICAL_UNIT_CENTER_BOTTOM_PADDING_HEIGHT_INC        6
+#define SPINNER_VERTICAL_UNIT_CONTENT_HEIGHT_INC                      119
+#define SPINNER_VERTICAL_UNIT_TITLE_TEXT_HEIGHT_INC                   36
+#define SPINNER_VERTICAL_ICON_CENTER_TOP_BOTTOM_PADDING_HEIGHT_INC    21
+#define SPINNER_VERTICAL_ICON_CONTENT_HEIGHT_INC                      90
+#define SPINNER_VERTICAL_ICON_TEXT_PADDING_WIDTH_INC                  12
+#define SPINNER_VERTICAL_ICON_SIZE_INC                                54 54
+
+// ***************************** Entry ****************************************/
+#define ENTRY_DEFAULT_TEXT_SIZE_INC                                   34
+#define ENTRY_EDITFIELD_TEXT_SIZE_INC                                 24
+#define ENTRY_EDITFIELD_TOP_BOTTOM_PADDING_HEIGHT_INC                 7
+#define ENTRY_EDITFIELD_FOCUS_RECT_EDGE_INC                           2
+#define ENTRY_EDITFIELD_CLEAR_BUTTON_PADDING_MIN_MAX_INC              42 0
+#define ENTRY_EDITFIELD_CLEAR_BUTTON_RIGHT_PADDING_MIN_MAX_INC        4 0
+#define ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC                       24
+#define ENTRY_PREEDIT_SUB1_COLOR_INC                                  "#2EA8E1"
+#define ENTRY_PREEDIT_SUB2_COLOR_INC                                  "#9962C3"
+#define ENTRY_PREEDIT_SUB3_COLOR_INC                                  "#76DE37"
+#define ENTRY_PREEDIT_SUB4_COLOR_INC                                  "#999999"
+#define ENTRY_PREEDIT_UNDERLINE_COLOR_INC                             "#FFFFFF"
+#define ENTRY_PREEDIT_TEXT_COLOR_INC                                  "#000000"
+#define ENTRY_PREEDIT_BACKGROUND_COLOR_INC                            "#FFFFFF"
+
+// ***************************** Gengrid **************************************/
+#define GENGRID_DEFAULT_PADDING_LT_SIZE                0 0
+#define GENGRID_DEFAULT_PADDING_RB_SIZE                0 0
+
+// ***************************** Genlist **************************************/
+#define LIST_DEFAULT_ITEM_HEIGHT                       108 // 106 + 2
+#define LIST_PADDING_LEFT_WIDTH                        6
+#define LIST_PADDING_RIGHT_WIDTH                       6
+#define LIST_PADDING_ICON_RIGHT_WIDTH                  12
+#define LIST_TITLE_TEXT_PADDING_TOP_HEIGHT             3
+#define LIST_TITLE_TEXT_PADDING_BOTTOM_HEIGHT          5
+#define LIST_1TEXT_PADDING_TOP_HEIGHT                  31
+#define LIST_1TEXT_PADDING_BOTTOM_HEIGHT               34
+#define LIST_PADDING_CENTER_HEIGHT                     3
+#define LIST_1TEXT_1ICON_1_PADDING_TOP_HEIGHT          19
+#define LIST_1TEXT_1ICON_1_PADDING_BOTTOM_HEIGHT       21
+#define LIST_1TEXT_1ICON_2_PADDING_TOP_HEIGHT          17
+#define LIST_1TEXT_1ICON_2_PADDING_BOTTOM_HEIGHT       14
+#define LIST_1TEXT_1ICON_3_PADDING_TOP_HEIGHT          12
+#define LIST_1TEXT_1ICON_3_PADDING_BOTTOM_HEIGHT       14
+#define LIST_ICON_SIZE                                 54 54
+#define LIST_ICON_01_SIZE                              72 72
+#define LIST_2TEXT_PADDING_TOP_HEIGHT                  13
+#define LIST_2TEXT_PADDING_BOTTOM_HEIGHT               16
+#define LIST_2TEXT_1ICON_1_PADDING_TOP_HEIGHT          12
+#define LIST_2TEXT_1ICON_1_PADDING_BOTTOM_HEIGHT       14
+#define LIST_2TEXT_1ICON_2_PADDING_TOP_HEIGHT          17
+#define LIST_2TEXT_1ICON_2_PADDING_BOTTOM_HEIGHT       14
+#define LIST_2TEXT_1ICON_3_PADDING_TOP_HEIGHT          12
+#define LIST_2TEXT_1ICON_3_PADDING_BOTTOM_HEIGHT       14
+#define LIST_MULTILINE_PADDING_TOP_HEIGHT              12
+#define LIST_MULTILINE_PADDING_BOTTOM_HEIGHT           14
+#define LIST_GROUPINDEX_PADDING_TOP_HEIGHT             0
+#define LIST_GROUPINDEX_PADDING_BOTTOM_HEIGHT          2
+#define LIST_GROUPINDEX_HEIGHT                         34
+#define LIST_BOTTOM_LINE_HEIGHT                        2
+#define LIST_GROUPINDEX_BOTTOM_LINE_HEIGHT             2
+#define LIST_TEXT_MIN_HEIGHT                           43
+#define LIST_TEXT_MAX_HEIGHT                           140
+#define LIST_TEXT_01_MIN_HEIGHT                        36
+#define LIST_TEXT_01_MAX_HEIGHT                        120
+#define LIST_TEXT_MAIN_SIZE                            34
+#define LIST_TEXT_SUB_SIZE                             28
+#define LIST_TITLE_TEXT_SIZE                           28
+#define LIST_GROUPINDEX_TEXT_SIZE                      28
+#define LIST_ICON_MIN_HEIGHT                           106
+
+// ***************************** Index ****************************************/
+#define INDEX_PAGECONTROL_BG_SIZE_INC                  16 6
+#define INDEX_PAGECONTROL_DOT_SIZE_INC                 6 6
+
+// ***************************** Label ****************************************/
+#define LABEL_FONT_SIZE_INC                            34
+
+// ***************************** Layout ***************************************/
+// Layout - nocontents
+#define NOCONTENT_TEXT_SIZE                               34
+#define NOCONTENT_LR_PADDING_SIZE                         6
+#define NOCONTENT_IMAGE_SIZE                              54
+#define NOCONTENT_IMAGE_PADDING_HEIGHT                    12
+// ***************************** Map ****************************************/
+
+
+// ***************************** Naviframe *****************************************/
+#define NAVIFRAME_PADDING_SIZE_INC                     6
+#define NAVIFRAME_HEIGHT_INC                           44
+#define NAVIFRAME_TEXT_SIZE_INC                        28
+#define NAVIFRAME_TEXT_TOP_PADDING_SIZE_INC            4
+#define NAVIFRAME_TEXT_BOTTOM_PADDING_SIZE_INC         3
+#define NAVIFRAME_TEXT_SLIDING_SPEED                   0.009
+#define NAVIFRAME_TEXT_SLIDING_START_WAITING_TIME      0.8
+
+// ***************************** Panel*****************************************/
+
+
+// ***************************** Popup ****************************************/
+#define POPUP_OUTSIDE_PADDING_HEIGHT_INC                             "2"
+#define POPUP_DEFAULT_ACTION_AREA_HEIGHT_INC                         "64"
+#define POPUP_VERTICAL_ACTION_AREA_HEIGHT_INC                        "140"
+
+#define POPUP_DEFAULT_TEXT_SIZE_INC                                  28
+#define POPUP_DEFAULT_TOP_LINE_HEIGHT_INC                            2
+#define POPUP_DEFAULT_BASE_MIN_WIDTH_INC                             216
+#define POPUP_DEFAULT_BASE_MIN_HEIGHT_INC                            432
+#define POPUP_DEFAULT_TEXT_LEFT_RIGHT_PADDING_WIDTH_INC              6
+#define POPUP_DEFAULT_TEXT_TOP_BOTTOM_PADDING_WIDTH_INC              12
+#define POPUP_DEFAULT_CONTENT_BOTTOM_PADDING_HEIGHT_INC              30
+#define POPUP_DEFAULT_BUTTON_HEIGHT_INC                              64
+#define POPUP_DEFAULT_TITLE_HEIGHT_INC                               44
+#define POPUP_DEFAULT_BUTTON_CENTER_PADDING_WIDTH_INC                6
+#define POPUP_VERTICAL_BUTTON_CENTER_PADDING_HEIGHT_INC              12
+
+#define POPUP_TOAST_BASE_MIN_WIDTH_INC                               216
+#define POPUP_TOAST_BASE_MIN_HEIGHT_INC                              162
+#define POPUP_TOAST_BG_MIN_HEIGHT_INC                                160
+#define POPUP_TOAST_ICON_HEIGHT_INC                                  54
+#define POPUP_TOAST_ICON_TEXT_PADDING_HEIGHT_INC                     6
+#define POPUP_TOAST_TEXT_LEFT_RIGHT_PADDING_WIDTH_INC                6
+#define POPUP_TOAST_TEXT_HEIGHT_INC                                  37
+// ***************************** Progressbar **********************************/
+#define PROGRESSBAR_DEFAULT_BG_HEIGHT_SIZE_INC        4
+#define PROGRESSBAR_PROCESS_BAR_IMAGE_SIZE_INC        108 108
+#define PROGRESSBAR_PROCESS_SMALL_BAR_IMAGE_SIZE_INC  35 35
+
+
+// ***************************** Radio ****************************************/
+#define RADIO_DEFAULT_BASE_MIN_SIZE_INC               72 72
+#define RADIO_DEFAULT_RADIO_MAX_SIZE_INC              72 72
+
+
+// ***************************** Scroller **************************************/
+#define SCROLLER_VBAR_MIN_SIZE_INC                    4 34
+#define SCROLLER_VBAR_MAX_SIZE_INC                    4 99999
+#define SCROLLER_VBAR_BG_MIN_SIZE_INC                 4 204
+#define SCROLLER_VBAR_BG_MAX_SIZE_INC                 4 204
+#define SCROLLER_HBAR_MIN_SIZE_INC                    15 4
+#define SCROLLER_HBAR_MAX_SIZE_INC                    99999 4
+#define SCROLLER_VBAR_PADDING_TOP_SIZE_INC            6
+#define SCROLLER_VBAR_PADDING_BOTTOM_SIZE_INC         6
+#define SCROLLER_VBAR_PADDING_LEFT_SIZE_INC           2
+#define SCROLLER_VBAR_PADDING_RIGHT_SIZE_INC          0
+#define SCROLLER_HBAR_PADDING_TOP_SIZE_INC            2
+#define SCROLLER_HBAR_PADDING_BOTTOM_SIZE_INC         0
+#define SCROLLER_HBAR_PADDING_LEFT_SIZE_INC           6
+#define SCROLLER_HBAR_PADDING_RIGHT_SIZE_INC          6
+#define SCROLLER_END_EFFECT_MAX_SIZE_INC              18
+#define SCROLLER_END_EFFECT_MIN_SIZE_INC              8
+#define SCROLLER_END_EFFECT_MOVE_CORRECTION_VALUE_INC 10
+#define SCROLLER_END_EFFECT_HORIZONTAL_EDGE_SIZE_INC  18
+#define SCROLLER_END_EFFECT_VERTICAL_EDGE_SIZE_INC    18
+
+// ***************************** Slider ***************************************/
+
+#define STYLE_TAG \
+   tag:  "br" "\n";\
+   tag:  "ps" "ps";\
+   tag:  "tab" "\t";\
+   tag:  "b" "+ font_weight=Bold";
+
+#define STYLE_TAG_ENTRY \
+   tag:  "em" "+ font_style=Oblique";\
+   tag:  "link" "+ color=#800 underline=on underline_color=#8008";\
+   tag:  "hilight" "+ font_weight=Bold";\
+
+#define STYLE_TAG_ENTRY_DISABLE \
+   tag:  "em" "+ font_style=Oblique";\
+   tag:  "link" "+ color=#00000080 underline=on underline_color=#00000080";\
+   tag:  "hilight" "+ font_weight=Bold";\
+
+#define STYLE_TAG_PREEDIT \
+   tag:  "preedit" "+ underline=on underline_color="ENTRY_PREEDIT_UNDERLINE_COLOR_INC;\
+   tag:  "preedit_sel" "+ backing=on backing_color="ENTRY_PREEDIT_BACKGROUND_COLOR_INC" color="ENTRY_PREEDIT_TEXT_COLOR_INC" underline=on underline_color="ENTRY_PREEDIT_TEXT_COLOR_INC;\
+   tag:  "preedit_sub1" "+ backing=on backing_color="ENTRY_PREEDIT_SUB1_COLOR_INC" underline=on underline_color="ENTRY_PREEDIT_UNDERLINE_COLOR_INC;\
+   tag:  "preedit_sub2" "+ backing=on backing_color="ENTRY_PREEDIT_SUB2_COLOR_INC" underline=on underline_color="ENTRY_PREEDIT_UNDERLINE_COLOR_INC;\
+   tag:  "preedit_sub3" "+ backing=on backing_color="ENTRY_PREEDIT_SUB3_COLOR_INC" underline=on underline_color="ENTRY_PREEDIT_UNDERLINE_COLOR_INC;\
+   tag:  "preedit_sub4" "+ backing=on backing_color="ENTRY_PREEDIT_SUB4_COLOR_INC" underline=on underline_color="ENTRY_PREEDIT_UNDERLINE_COLOR_INC;
+
+#define STYLE_TAG_PREEDIT_BLACK \
+   tag:  "preedit" "+ underline=on underline_color=#000000FF";\
+   tag:  "preedit_sel" "+ backing=on backing_color=#000000FF color=#FFFFFFFF";\
+   tag:  "preedit_sub1" "+ backing=on backing_color="ENTRY_PREEDIT_SUB1_COLOR_INC" underline=on underline_color=#000000FF";\
+   tag:  "preedit_sub2" "+ backing=on backing_color="ENTRY_PREEDIT_SUB2_COLOR_INC" underline=on underline_color=#000000FF";\
+   tag:  "preedit_sub3" "+ backing=on backing_color="ENTRY_PREEDIT_SUB3_COLOR_INC" underline=on underline_color=#000000FF";\
+   tag:  "preedit_sub4" "+ backing=on backing_color="ENTRY_PREEDIT_SUB4_COLOR_INC" underline=on underline_color=#000000FF";
+
+#define STYLE_TAG_MATCH \
+        ;
+//      tag:  "match" "+ color=#ffffff color_class=T0212";
+
+#define STYLE_TAG_MATCH_FOCUS \
+      tag:  "match" ;
+
+styles {
+  // Naviframe Style
+  style { name: "naviframe_title";
+    base: "font=Tizen:style=Condensed font_size="NAVIFRAME_TEXT_SIZE_INC" color=#00b2ffff align=center text_class=tizen";
+  }
+
+// List Style
+  style { name: "list_text_title_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TITLE_TEXT_SIZE" align=center color=#00b2ffff text_class=tizen ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_groupindex_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_GROUPINDEX_TEXT_SIZE" align=center color=#00b2ff99 text_class=tizen ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_default_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_default_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_default_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff33 text_class=list_item ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_default_normal_left";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffffff text_class=list_item ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_default_press_left";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffffff text_class=list_item ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_default_dim_left";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffff33 text_class=list_item ellipsis=1.0";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff33 text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_01_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff color_class=T023L1 text_class=T023L1 ellipsis=1.0  wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_01_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff color_class=T023L1P text_class=T023L1P ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_01_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff80 text_class=list_item ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff color_class=T023L1D text_class=T023L1D ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_02_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff color_class=T023L2 text_class=T023L2 ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_02_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff color_class=T023L2P text_class=T023L2P ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_02_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" color=#ffffffff text_class=list_item ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff color_class=T023L2D text_class=T023L2D ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_03_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffffff text_class=T023L3 ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffff color_class=T023L3 text_class=T023L3 ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_03_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffffff text_class=T023L3P ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffff color_class=T023L3P text_class=T023L3P ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_main_03_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffffff text_class=T023L3D ellipsis=1.0 wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="LIST_TEXT_MAIN_SIZE" align=left color=#ffffff color_class=T023L3D text_class=T023L3D ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#7f7f7fff text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+ style { name: "list_text_sub_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#7f7f7fff text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#7f7f7f7f text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_01_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#ffffffff text_class=T024L1 ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_01_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#ffffffff text_class=T024L1P ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_01_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#ffffff80 text_class=T024L1D ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_02_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" color=#7f7f7fff text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+ style { name: "list_text_sub_02_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" color=#7f7f7fff text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_sub_02_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" color=#7f7f7f7f text_class=list_item ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_multiline_main_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_multiline_main_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffffff text_class=list_item wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_multiline_main_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_MAIN_SIZE" align=center color=#ffffff33 text_class=list_item wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_multiline_sub_normal";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#7f7f7fff text_class=list_item wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_multiline_sub_press";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#7f7f7fff text_class=list_item wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+  style { name: "list_text_multiline_sub_dim";
+    base: "font=Tizen:style=Condensed font_size="LIST_TEXT_SUB_SIZE" align=center color=#7f7f7f7f text_class=list_item wrap=mixed";
+    STYLE_TAG
+    STYLE_TAG_MATCH
+  }
+
+  // Nocontent styles
+  style { name: "nocontent_style";
+    base: "font=Tizen:style=Condensed font_size="NOCONTENT_TEXT_SIZE" align=center color=#ffffffff text_class=list_item wrap=mixed ";
+    //base: "font=Tizen:style=Regular font_size="NOCONTENT_TEXT_SIZE" align=center color=#FFFFFF color_class=T023L1 text_class=T023L1 wrap=mixed ";
+    STYLE_TAG
+  }
+
+  // Button Style
+  style { name: "button_default_normal";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_DEFAULT_TEXT_SIZE_INC" align=center color=#00b2ffff text_class=tizen ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "button_default_press";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_DEFAULT_TEXT_SIZE_INC" align=center color=#00b2ffff text_class=tizen ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "button_default_dim";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_DEFAULT_TEXT_SIZE_INC" align=center color=#00b2ff33 text_class=tizen ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "button_more_normal";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_MORE_TEXT_SIZE_INC" align=center color=#ffffffff text_class=tizen ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "button_more_press";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_MORE_TEXT_SIZE_INC" align=center color=#ffffffff text_class=tizen ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "button_more_dim";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_MORE_TEXT_SIZE_INC" align=center color=#ffffff33 text_class=tizen ellipsis=1.0 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "button_datetime_ampm_normal";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_DATETIME_TIME_AMPM_TEXT_SIZE_INC" align=center color=#00b2ffff text_class=tizen ellipsis=1.0 wrap=none";
+    STYLE_TAG
+  }
+  style { name: "button_datetime_ampm_press";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_DATETIME_TIME_AMPM_TEXT_SIZE_INC" align=center color=#ffffffff text_class=tizen ellipsis=1.0 wrap=none";
+    STYLE_TAG
+  }
+  style { name: "button_datetime_ampm_dim";
+    base: "font=Tizen:style=Condensed font_size="BUTTON_DATETIME_TIME_AMPM_TEXT_SIZE_INC" align=center color=#ffffffff text_class=tizen ellipsis=1.0 wrap=none";
+    STYLE_TAG
+  }
+  style { name: "button_spinner_horizontal_normal";
+    // FIXME: font=SNum-3T - T1232E2
+    base: "font=Tizen:style=Regular font_size="BUTTON_SPINNER_HORIZONTAL_TEXT_SIZE_INC" color=#ffffffff wrap=none align=center text_class=tizen";
+    STYLE_TAG
+  }
+  style { name: "button_spinner_horizontal_press";
+    // FIXME: font=SNum-3T - T1232E2P
+    base: "font=Tizen:style=Regular font_size="BUTTON_SPINNER_HORIZONTAL_TEXT_SIZE_INC" color=#ffffffff wrap=none align=center text_class=tizen";
+    STYLE_TAG
+  }
+  style { name: "button_spinner_horizontal_dim";
+    // FIXME: font=SNum-3T - T1232E2D
+    base: "font=Tizen:style=Regular font_size="BUTTON_SPINNER_HORIZONTAL_TEXT_SIZE_INC" color=#ffffff33 wrap=none align=center text_class=tizen";
+    STYLE_TAG
+  }
+  style { name: "button_spinner_vertical_normal";
+    // FIXME: font=SNum-3T - T1232E1
+    base: "font=Tizen:style=Regular font_size="BUTTON_SPINNER_VERTICAL_TEXT_SIZE_INC" color=#ffffffff wrap=none align=center text_class=tizen";
+    STYLE_TAG
+  }
+  style { name: "button_spinner_vertical_press";
+    // FIXME: font=SNum-3T - T1232E1P
+    base: "font=Tizen:style=Regular font_size="BUTTON_SPINNER_VERTICAL_TEXT_SIZE_INC" color=#ffffffff wrap=none align=center text_class=tizen";
+    STYLE_TAG
+  }
+  style { name: "button_spinner_vertical_dim";
+    // FIXME: font=SNum-3T - T1232E1D
+    base: "font=Tizen:style=Regular font_size="BUTTON_SPINNER_VERTICAL_TEXT_SIZE_INC" color=#ffffff33 wrap=none align=center text_class=tizen";
+    STYLE_TAG
+  }
+
+  //Entry Style
+  style { name: "entry_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T142 left_margin=1 right_margin=2 wrap=mixed text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "entry_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T144D left_margin=1 right_margin=2 wrap=mixed text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "entry_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#f9f9f9ff left_margin=4 right_margin=2 wrap=mixed text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "entry_char_wrap_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "entry_char_wrap_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "entry_char_wrap_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#f9f9f9ff wrap=char left_margin=4 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "entry_single_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "entry_single_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "entry_single_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color=#f9f9f9ff wrap=none left_margin=4 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "entry_font_color_black_normal";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_TEXT_COLOR_INC" wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "entry_font_color_black_disabled";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_DISABLED_TEXT_COLOR_INC" wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "entry_font_color_black_guide";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_GUIDE_TEXT_COLOR_INC" wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "entry_font_color_black_char_wrap_normal";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_TEXT_COLOR_INC" wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "entry_font_color_black_char_wrap_disabled";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_DISABLED_TEXT_COLOR_INC" wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "entry_font_color_black_char_wrap_guide";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_GUIDE_TEXT_COLOR_INC" wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "entry_font_color_black_single_normal";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_TEXT_COLOR_INC" wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "entry_font_color_black_single_disabled";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_DISABLED_TEXT_COLOR_INC" wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "entry_font_color_black_single_guide";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_GUIDE_TEXT_COLOR_INC" wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "tizen_text_class_single_textblock_style";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_TEXT_COLOR_INC" wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "tizen_text_class_single_textblock_disabled_style";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_DISABLED_TEXT_COLOR_INC" wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT_BLACK
+  }
+  style { name: "tizen_text_class_single_textblock_guide_style";
+    base: "font=Tizen:style=Roman font_size="ENTRY_DEFAULT_TEXT_SIZE_INC" color="ENTRY_FONT_COLOR_BLACK_GUIDE_TEXT_COLOR_INC" wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T143 wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#f9f9f9ff left_margin=4 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_fixed_size_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_fixed_size_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T143 wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_fixed_size_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=mixed left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_fixed_size_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#f9f9f9ff left_margin=4 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_char_wrap_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_char_wrap_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T143 wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_char_wrap_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDTIFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_char_wrap_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#f9f9f9ff left_margin=4 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_char_wrap_fixed_size_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_char_wrap_fixed_size_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T143 wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_char_wrap_fixed_size_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDTIFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=char left_margin=1 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_char_wrap_fixed_size_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#f9f9f9ff left_margin=4 right_margin=2 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_single_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_single_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T143 wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_single_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_single_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#f9f9f9ff wrap=none left_margin=4 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_single_fixed_size_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T142 wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_single_fixed_size_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T143 wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_single_fixed_size_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#ffffff color_class=T144D wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_single_fixed_size_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_TEXT_SIZE_INC" color=#f9f9f9ff wrap=none left_margin=4 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_searchbar_single_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T142 wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_searchbar_single_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T143 wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_searchbar_single_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T144D wrap=none left_margin=1 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_searchbar_single_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#f9f9f9ff wrap=none left_margin=4 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+  style { name: "editfield_searchbar_single_disabled_guide";
+    // FIXME: T141D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T141D wrap=none left_margin=4 right_margin=3 text_class=entry";
+    STYLE_TAG_ENTRY
+  }
+
+  style { name: "editfield_searchbar_single_fixed_size_normal";
+    // FIXME: T142 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T142 wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_searchbar_single_fixed_size_focused";
+    // FIXME: T143 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T143 wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_searchbar_single_fixed_size_disabled";
+    // FIXME: T144D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T144D wrap=none left_margin=1 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY_DISABLE
+    STYLE_TAG_PREEDIT
+  }
+  style { name: "editfield_searchbar_single_fixed_size_guide";
+    // FIXME: T141 - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#f9f9f9ff wrap=none left_margin=4 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+  }
+  style { name: "editfield_searchbar_single_fixed_size_disabled_guide";
+    // FIXME: T141D - There is no data
+    base: "font=Tizen:style=Regular font_size="ENTRY_EDITFIELD_SEARCHBAR_TEXT_SIZE_INC" color=#FFFFFF color_class=T141D wrap=none left_margin=4 right_margin=3 text_class=tizen";
+    STYLE_TAG_ENTRY
+  }
+
+  //Popup Style
+  style { name: "popup_default_style";
+    base: "font=Tizen:style=Condensed font_size="POPUP_DEFAULT_TEXT_SIZE_INC" color=#ffffffff align=center text_class=label wrap=mixed";
+    //base: "font=Tizen:style=Regular font_size="POPUP_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T053 align=center text_class=T053 wrap=mixed";
+    STYLE_TAG
+  }
+  style { name: "popup_title_style";
+    base: "font=Tizen:style=Condensed font_size="POPUP_DEFAULT_TEXT_SIZE_INC" color=#ffffffff align=center text_class=title_bar wrap=mixed ellipsis=1.0";
+    //base: "font=Tizen:style=Regular font_size="POPUP_DEFAULT_TEXT_SIZE_INC" color=#ffffff color_class=T050 align=center text_class=T050 wrap=mixed ellipsis=1.0";
+    STYLE_TAG
+  }
+  style { name: "popup_toast_style";
+    base: "font=Tizen:style=Condensed font_size="POPUP_DEFAULT_TEXT_SIZE_INC" color=#ffffffff align=center text_class=label wrap=mixed ellipsis=1.0";
+    STYLE_TAG
+  }
+
+  //Spinner Style
+  style { name: "spinner_unit_normal";
+    base: "font=Tizen:style=Condensed font_size="SPINNER_UNIT_TEXT_SIZE_INC" color=#ffffff7f wrap=none align=center text_class=label";
+    STYLE_TAG
+  }
+  style { name: "spinner_unit_press";
+    base: "font=Tizen:style=Condensed font_size="SPINNER_UNIT_TEXT_SIZE_INC" color=#ffffff7f wrap=none align=center text_class=label";
+    STYLE_TAG
+  }
+  style { name: "spinner_unit_dim";
+    base: "font=Tizen:style=Condensed font_size="SPINNER_UNIT_TEXT_SIZE_INC" color=#ffffff7f wrap=none align=center text_class=label";
+    STYLE_TAG
+  }
+}

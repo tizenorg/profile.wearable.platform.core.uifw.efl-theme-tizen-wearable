@@ -1,0 +1,429 @@
+/*
+ * Copyright (c) 2015 Samsung Electronics Co., Ltd All Rights Reserved
+ *
+ * BSD 2-Clause License (http://www.opensource.org/licenses/bsd-license.php)
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ *   1. Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *   2. Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+group { name: "elm/check/base/default";
+   images {
+      image: "core_check_bg.png" COMP;
+      image: "core_check_icon.png" COMP;
+   }
+   script {
+      public check_state;
+      public check_disabled;
+      public check_visible;
+   }
+   parts {
+      part { name: "base";
+         type: SPACER;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: CHECK_DEFAULT_BASE_MIN_SIZE_INC;
+         }
+      }
+      part { name: "bg";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            image.normal: "core_check_bg.png";
+            color: 255 255 255 76;
+            max: CHECK_DEFAULT_CHECK_MAX_SIZE_INC;
+         }
+         description { state: "on" 0.0;
+            inherit: "default" 0.0;
+            color: 0 178 255 255;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 25;
+         }
+         description { state: "on_disabled" 0.0;
+            inherit: "on" 0.0;
+            color: 0 178 255 51;
+         }
+      }
+      part { name: "check";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to: "bg";
+            rel2.to: "bg";
+            image.normal: "core_check_icon.png";
+            color: 204 204 204 255;
+            max: CHECK_DEFAULT_CHECK_MAX_SIZE_INC;
+         }
+         description { state: "on" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 255;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 102;
+         }
+         description { state: "on_disabled" 0.0;
+            inherit: "on" 0.0;
+            color: 255 255 255 102;
+         }
+      }
+      part { name: "event";
+         scale: 1;
+         type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            color: 0 0 0 0;
+         }
+      }
+   }
+   programs {
+      program { name: "click";
+         signal: "mouse,clicked,1";
+         source: "event";
+         script {
+            if (get_int(check_disabled) == 1) return;
+            emit("elm,action,check,toggle", "");
+            run_program(PROGRAM:"touch_sound");
+         }
+      }
+      program { name: "touch_sound";
+         action: RUN_PLUGIN "touch_sound";
+      }
+      program { name: "check_on";
+         signal: "elm,state,check,on";
+         source: "elm";
+         script {
+            if (get_int(check_disabled) == 1) {
+               if (get_int(check_state) == 1) {
+                  set_state(PART:"bg", "on_disabled", 0.0);
+                  set_state(PART:"check", "on_disabled", 0.0);
+               }
+               else {
+                  set_state(PART:"bg", "disabled", 0.0);
+                  set_state(PART:"check", "disabled", 0.0);
+               }
+            }
+            else {
+               set_state(PART:"bg", "on", 0.0);
+               set_state(PART:"check", "on", 0.0);
+            }
+            set_int(check_state, 1);
+         }
+      }
+      program { name: "check_off";
+         signal: "elm,state,check,off";
+         source: "elm";
+         script {
+            if (get_int(check_disabled) == 1) {
+               if (get_int(check_state) == 1) {
+                  set_state(PART:"bg", "on_disabled", 0.0);
+                  set_state(PART:"check", "on_disabled", 0.0);
+               }
+               else {
+                  set_state(PART:"bg", "on_disabled", 0.0);
+                  set_state(PART:"check", "on_disabled", 0.0);
+               }
+            }
+            else {
+               set_state(PART:"bg", "default", 0.0);
+               set_state(PART:"check", "default", 0.0);
+            }
+            set_int(check_state, 0);
+         }
+      }
+      program { name: "disable";
+         signal: "elm,state,disabled";
+         source: "elm";
+         script {
+            set_int(check_disabled, 1);
+            if (get_int(check_state) == 1) {
+               set_state(PART:"bg", "on_disabled", 0.0);
+               set_state(PART:"check", "on_disabled", 0.0);
+            }
+            else {
+               set_state(PART:"bg", "disabled", 0.0);
+               set_state(PART:"check", "disabled", 0.0);
+            }
+         }
+      }
+      program { name: "enable";
+         signal: "elm,state,enabled";
+         source: "elm";
+         script {
+            set_int(check_disabled, 0);
+            if (get_int(check_state) == 1) {
+               set_state(PART:"bg", "on", 0.0);
+               set_state(PART:"check", "on", 0.0);
+            }
+            else {
+              set_state(PART:"bg", "default", 0.0);
+              set_state(PART:"check", "default", 0.0);
+            }
+         }
+      }
+      program { name: "pass_event_enable";
+         signal: "elm,event,pass,enabled";
+         source: "elm";
+         script {
+         //   set_mouse_events(PART:"event", 0);
+         }
+      }
+      program { name: "pass_event_disable";
+         signal: "elm,event,pass,disabled";
+         source:"elm";
+         script {
+         //   set_mouse_events(PART:"event", 1);
+         }
+      }
+      program { name: "repeat_event_enable";
+         signal: "elm,event,repeat,enabled";
+         source: "elm";
+         script {
+         //   set_repeat_events(PART:"event", 1);
+         }
+      }
+      program { name: "repeat_event_disable";
+         signal: "elm,event,repeat,disabled";
+         source:"elm";
+         script {
+         //   set_repeat_events(PART:"event", 0);
+         }
+      }
+   }
+}
+
+group { name: "elm/check/base/on&off";
+   images {
+      image: "core_toggle_bg.png" COMP;
+      image: "core_toggle_icon_on.png" COMP;
+      image: "core_toggle_icon_off.png" COMP;
+   }
+   script {
+      public check_state;
+      public check_disabled;
+      public check_visible;
+   }
+   parts {
+      part { name: "base";
+         type: SPACER;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: CHECK_ONOFF_BASE_MIN_SIZE_INC;
+         }
+      }
+      part { name: "bg";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            image.normal: "core_check_bg.png";
+            color: 255 255 255 51;
+            max: CHECK_ONOFF_CHECK_MAX_SIZE_INC;
+         }
+         description { state: "on" 0.0;
+            inherit: "default" 0.0;
+            color: 0 178 255 255;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "default" 0.0;
+            color: 255 255 255 25;
+         }
+         description { state: "on_disabled" 0.0;
+            inherit: "on" 0.0;
+            color: 0 178 255 76;
+         }
+      }
+      part { name: "off_icon";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to: "bg";
+            rel2.to: "bg";
+            image.normal: "core_toggle_icon_off.png";
+            color: 204 204 204 255;
+            visible: 0;
+            max: CHECK_ONOFF_CHECK_MAX_SIZE_INC;
+         }
+         description { state: "on" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "on" 0.0;
+            color: 204 204 204 76;
+         }
+      }
+      part { name: "on_icon";
+         scale: 1;
+         description { state: "default" 0.0;
+            rel1.to: "bg";
+            rel2.to: "bg";
+            image.normal: "core_toggle_icon_on.png";
+            max: CHECK_ONOFF_CHECK_MAX_SIZE_INC;
+            color: 255 255 255 255;
+            visible: 0;
+         }
+         description { state: "on" 0.0;
+            inherit: "default" 0.0;
+            visible: 1;
+         }
+         description { state: "disabled" 0.0;
+            inherit: "on" 0.0;
+            color: 255 255 255 76;
+         }
+      }
+      part { name: "event";
+         scale: 1;
+         type: RECT;
+         description { state: "default" 0.0;
+            rel1.to: "base";
+            rel2.to: "base";
+            color: 0 0 0 0;
+         }
+      }
+   }
+   programs {
+      program { name: "click";
+         signal: "mouse,clicked,1";
+         source: "event";
+         script {
+            if (get_int(check_disabled) == 1) return;
+            emit("elm,action,check,toggle", "");
+            run_program(PROGRAM:"touch_sound");
+         }
+      }
+      program { name: "touch_sound";
+         action: RUN_PLUGIN "touch_sound";
+      }
+      program { name: "check_on";
+         signal: "elm,state,check,on";
+         source: "elm";
+         script {
+            if (get_int(check_disabled) == 1) {
+               if (get_int(check_state) == 1) {
+                  set_state(PART:"bg", "on_disabled", 0.0);
+                  set_state(PART:"on_icon", "disabled", 0.0);
+                  set_state(PART:"off_icon", "default", 0.0);
+               }
+               else {
+                  set_state(PART:"bg", "off_disabled", 0.0);
+                  set_state(PART:"on_icon", "default", 0.0);
+                  set_state(PART:"off_icon", "disabled", 0.0);
+               }
+            }
+            else {
+               set_state(PART:"bg", "on", 0.0);
+               set_state(PART:"on_icon", "on", 0.0);
+               set_state(PART:"off_icon", "default", 0.0);
+            }
+            set_int(check_state, 1);
+         }
+      }
+      program { name: "check_off";
+         signal: "elm,state,check,off";
+         source: "elm";
+         script {
+            if (get_int(check_disabled) == 1) {
+               if (get_int(check_state) == 1) {
+                  set_state(PART:"bg", "on_disabled", 0.0);
+                  set_state(PART:"on_icon", "disabled", 0.0);
+                  set_state(PART:"off_icon", "default", 0.0);
+               }
+               else {
+                  set_state(PART:"bg", "off_disabled", 0.0);
+                  set_state(PART:"on_icon", "default", 0.0);
+                  set_state(PART:"off_icon", "disabled", 0.0);
+               }
+            }
+            else {
+               set_state(PART:"bg", "default", 0.0);
+               set_state(PART:"on_icon", "default", 0.0);
+               set_state(PART:"off_icon", "on", 0.0);
+            }
+            set_int(check_state, 0);
+         }
+      }
+      program { name: "disable";
+         signal: "elm,state,disabled";
+         source: "elm";
+         script {
+            set_int(check_disabled, 1);
+            if (get_int(check_state) == 1) {
+               set_state(PART:"bg", "on_disabled", 0.0);
+               set_state(PART:"on_icon", "disabled", 0.0);
+               set_state(PART:"off_icon", "default", 0.0);
+            }
+            else {
+               set_state(PART:"bg", "off_disabled", 0.0);
+               set_state(PART:"on_icon", "default", 0.0);
+               set_state(PART:"off_icon", "disabled", 0.0);
+            }
+         }
+      }
+      program { name: "enable";
+         signal: "elm,state,enabled";
+         source: "elm";
+         script {
+            set_int(check_disabled, 0);
+            if (get_int(check_state) == 1) {
+               set_state(PART:"bg", "on", 0.0);
+               set_state(PART:"on_icon", "on", 0.0);
+               set_state(PART:"off_icon", "default", 0.0);
+            }
+            else {
+               set_state(PART:"bg", "default", 0.0);
+               set_state(PART:"on_icon", "default", 0.0);
+               set_state(PART:"off_icon", "on", 0.0);
+            }
+         }
+      }
+      program { name: "pass_event_enable";
+         signal: "elm,event,pass,enabled";
+         source: "elm";
+         script {
+         //   set_mouse_events(PART:"event", 0);
+         }
+      }
+      program { name: "pass_event_disable";
+         signal: "elm,event,pass,disabled";
+         source:"elm";
+         script {
+         //   set_mouse_events(PART:"event", 1);
+         }
+      }
+      program { name: "repeat_event_enable";
+         signal: "elm,event,repeat,enabled";
+         source: "elm";
+         script {
+         //   set_repeat_events(PART:"event", 1);
+         }
+      }
+      program { name: "repeat_event_disable";
+         signal: "elm,event,repeat,disabled";
+         source:"elm";
+         script {
+         //   set_repeat_events(PART:"event", 0);
+         }
+      }
+   }
+}
+
+///////////////////////////////////////////////////////////////////////////////
