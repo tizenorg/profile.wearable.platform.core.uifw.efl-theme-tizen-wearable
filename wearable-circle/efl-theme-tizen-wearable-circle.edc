@@ -115,6 +115,7 @@ collections {
    #include "widgets/label.edc"
    #include "widgets/slider.edc"
    #include "widgets/map.edc"
+   #include "widgets/win.edc"
 
    color_classes {
       color_class {
