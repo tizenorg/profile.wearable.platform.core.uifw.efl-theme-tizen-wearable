@@ -30,6 +30,7 @@
 #include "genlist_macro.edc"
 
 group { name: "elm/genlist/item/default/default";
+   alias: "elm/genlist/item_compress/default/default";
    alias: "elm/list/item/default";
    alias: "elm/list/item_odd/default";
    alias: "elm/list/item_compress/default";
@@ -79,6 +80,7 @@ group { name: "elm/genlist/item/default/default";
 }
 
 group { name: "elm/genlist/item/1icon/default";
+   alias: "elm/genlist/item_compress/1icon/default";
 
    data.item: "contents" "elm.icon elm.swallow.center_check";
 
@@ -96,6 +98,7 @@ group { name: "elm/genlist/item/1icon/default";
 }
 
 group { name: "elm/genlist/item/1icon/no_padding/default";
+   alias: "elm/genlist/item_compress/1icon/no_padding/default";
 
    data.item: "contents" "elm.icon elm.swallow.center_check";
 
@@ -111,6 +114,7 @@ group { name: "elm/genlist/item/1icon/no_padding/default";
 }
 
 group { name: "elm/genlist/item/groupindex/default";
+   alias: "elm/genlist/item_compress/groupindex/default";
 
    PROLOG_LIST
    data.item: "texts" "elm.text";
@@ -190,6 +194,7 @@ group { name: "elm/genlist/item/groupindex/default";
 }
 
 group { name: "elm/genlist/item/title/default";
+   alias: "elm/genlist/item_compress/title/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE_TITLE
@@ -238,6 +243,7 @@ group { name: "elm/genlist/item/title/default";
 }
 
 group { name: "elm/genlist/item/title_with_groupindex/default";
+   alias: "elm/genlist/item_compress/title_with_groupindex/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE_TITLE
@@ -286,6 +292,7 @@ group { name: "elm/genlist/item/title_with_groupindex/default";
 }
 
 group { name: "elm/genlist/item/1text/default";
+   alias: "elm/genlist/item_compress/1text/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -399,6 +406,7 @@ group { name: "elm/genlist/item/1text/default";
 }
 
 group { name: "elm/genlist/item/1text.1icon/default";
+   alias: "elm/genlist/item_compress/1text.1icon/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -524,6 +532,7 @@ group { name: "elm/genlist/item/1text.1icon/default";
 }
 
 group { name: "elm/genlist/item/1text.1icon.1/default";
+   alias: "elm/genlist/item_compress/1text.1icon.1/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -649,6 +658,7 @@ group { name: "elm/genlist/item/1text.1icon.1/default";
 }
 
 group { name: "elm/genlist/item/1text.1icon.divider/default";
+   alias: "elm/genlist/item_compress/1text.1icon.divider/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -784,6 +794,7 @@ group { name: "elm/genlist/item/1text.1icon.divider/default";
 }
 
 group { name: "elm/genlist/item/2text/default";
+   alias: "elm/genlist/item_compress/2text/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -970,6 +981,7 @@ group { name: "elm/genlist/item/2text/default";
 }
 
 group { name: "elm/genlist/item/2text.1icon/default";
+   alias: "elm/genlist/item_compress/2text.1icon/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -1168,6 +1180,7 @@ group { name: "elm/genlist/item/2text.1icon/default";
 }
 
 group { name: "elm/genlist/item/2text.1icon.1/default";
+   alias: "elm/genlist/item_compress/2text.1icon.1/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -1366,6 +1379,7 @@ group { name: "elm/genlist/item/2text.1icon.1/default";
 }
 
 group { name: "elm/genlist/item/2text.1icon.divider/default";
+   alias: "elm/genlist/item_compress/2text.1icon.divider/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -1574,6 +1588,7 @@ group { name: "elm/genlist/item/2text.1icon.divider/default";
 }
 
 group { name: "elm/genlist/item/3text/default";
+   alias: "elm/genlist/item_compress/3text/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -1823,6 +1838,7 @@ group { name: "elm/genlist/item/3text/default";
 }
 
 group { name: "elm/genlist/item/3text.1icon/default";
+   alias: "elm/genlist/item_compress/3text.1icon/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -2084,6 +2100,7 @@ group { name: "elm/genlist/item/3text.1icon/default";
 }
 
 group { name: "elm/genlist/item/3text.1icon.1/default";
+   alias: "elm/genlist/item_compress/3text.1icon.1/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -2345,6 +2362,7 @@ group { name: "elm/genlist/item/3text.1icon.1/default";
 }
 
 group { name: "elm/genlist/item/4text/default";
+   alias: "elm/genlist/item_compress/4text/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE
@@ -2636,6 +2654,7 @@ group { name: "elm/genlist/item/4text/default";
 }
 
 group { name: "elm/genlist/item/multiline/default";
+   alias: "elm/genlist/item_compress/multiline/default";
 
    PROLOG_LIST
    data.item: "texts" "elm.text";
@@ -2816,6 +2835,7 @@ group { name: "elm/genlist/item/editfield/default";
 }
 
 group { name: "elm/genlist/item/padding/default";
+   alias: "elm/genlist/item_compress/padding/default";
    parts {
       part { name: "base";
          type: SPACER;
