@@ -30,6 +30,7 @@
 #include "genlist_macro.edc"
 
 group { name: "elm/genlist/item/default/default";
+   alias: "elm/genlist/item_compress/default/default";
    alias: "elm/list/item/default";
    alias: "elm/list/item_odd/default";
    alias: "elm/list/item_compress/default";
@@ -190,6 +191,7 @@ group { name: "elm/genlist/item/groupindex/default";
 }
 
 group { name: "elm/genlist/item/title/default";
+   alias: "elm/genlist/item_compress/title/default";
 
    PROLOG_LIST
    SCRIPT_START_SLIDE_TITLE
@@ -2816,6 +2818,7 @@ group { name: "elm/genlist/item/editfield/default";
 }
 
 group { name: "elm/genlist/item/padding/default";
+   alias: "elm/genlist/item_compress/padding/default";
    parts {
       part { name: "base";
          type: SPACER;
