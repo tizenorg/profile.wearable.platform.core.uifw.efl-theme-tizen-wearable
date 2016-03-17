@@ -17,7 +17,7 @@
 group { name: "elm/popup/buttons1/default";
    data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT;
    parts{
-      part{ name:"actionbtn1";
+      part{ name:"elm.swallow.content.button1";
          type: SWALLOW;
          scale: 1;
          description { state: "default" 0.0; }
@@ -39,7 +39,7 @@ group { name: "elm/popup/buttons2/default";
           color: 0 25 48 255; /*(Changeable UI) color_class: "B0553";*/
         }
       }
-      part{ name:"actionbtn1";
+      part{ name:"elm.swallow.content.button1";
          type: SWALLOW;
          scale: 1;
          description { state: "default" 0.0;
@@ -49,7 +49,7 @@ group { name: "elm/popup/buttons2/default";
             }
          }
       }
-      part{ name:"actionbtn2";
+      part{ name:"elm.swallow.content.button2";
          type: SWALLOW;
          scale: 1;
          description { state: "default" 0.0;
