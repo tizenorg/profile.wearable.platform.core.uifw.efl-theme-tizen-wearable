@@ -117,6 +117,9 @@ collections {
    #include "widgets/map.edc"
    #include "widgets/win.edc"
    #include "widgets/border.edc"
+   #include "widgets/focus_highlight.edc"
+   #include "widgets/frame.edc"
+   #include "widgets/inwin.edc"
 
    color_classes {
       color_class {
