@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-group { name: "elm/notify/bottom/popup";
+group { name: "elm/notify/bottom/popup/circle";
    parts {
       part { name: "base";
          type: RECT;
@@ -185,7 +185,7 @@ group { name: "elm/notify/bottom/toast/circle";
    }
 }
 
-group { name: "elm/notify/block_events/popup";
+group { name: "elm/notify/block_events/popup/circle";
    parts {
       part { name: "block_events_color";
          type: RECT;
@@ -267,10 +267,10 @@ group { name: "elm/label/base/popup/no_block";
    }
 }
 
-group { name: "elm/popup/buttons1/circle";
+group { name: "elm/popup/buttons1/popup/circle";
    data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT_INC;
    parts{
-      part{ name: "actionbtn1";
+      part{ name: "elm.swallow.content.button1";
          type: SWALLOW;
          scale: 1;
          description { state: "default" 0.0;
@@ -284,10 +284,10 @@ group { name: "elm/popup/buttons1/circle";
    }
 }
 
-group { name: "elm/popup/buttons2/circle";
+group { name: "elm/popup/buttons2/popup/circle";
    data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT_INC;
    parts{
-      part{ name: "actionbtn1";
+      part{ name: "elm.swallow.content.button1";
          type: SWALLOW;
          scale: 1;
          description { state: "default" 0.0;
@@ -301,7 +301,7 @@ group { name: "elm/popup/buttons2/circle";
             align: 1.0 0.5;
          }
       }
-      part{ name: "actionbtn2";
+      part{ name: "elm.swallow.content.button2";
          type: SWALLOW;
          scale: 1;
          description { state: "default" 0.0;
@@ -321,8 +321,8 @@ group { name: "elm/popup/buttons2/circle";
          repeat_events: 1;
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            rel1.to: "actionbtn1";
-            rel2.to: "actionbtn1";
+            rel1.to: "elm.swallow.content.button1";
+            rel2.to: "elm.swallow.content.button1";
          }
       }
       part { name: "event2";
@@ -331,8 +331,8 @@ group { name: "elm/popup/buttons2/circle";
          repeat_events: 1;
          description { state: "default" 0.0;
             color: 0 0 0 0;
-            rel1.to: "actionbtn2";
-            rel2.to: "actionbtn2";
+            rel1.to: "elm.swallow.content.button2";
+            rel2.to: "elm.swallow.content.button2";
          }
       }
    }
@@ -342,33 +342,33 @@ group { name: "elm/popup/buttons2/circle";
          source: "event1";
          action: STATE_SET "hide" 0.0;
          transition: CUBIC_BEZIER 0.25 0.45 0.03 0.41 1.0;
-         target: "actionbtn2";
+         target: "elm.swallow.content.button2";
       }
       program { name: "mouse_out1";
          signal: "mouse,out";
          source: "event1";
          action: STATE_SET "default" 0.0;
          transition: CUBIC_BEZIER 0.25 0.45 0.03 0.41 1.0;
-         target: "actionbtn2";
+         target: "elm.swallow.content.button2";
       }
       program { name: "mouse_down2";
          signal: "mouse,down,1";
          source: "event2";
          action: STATE_SET "hide" 0.0;
          transition: CUBIC_BEZIER 0.25 0.45 0.03 0.41 1.0;
-         target: "actionbtn1";
+         target: "elm.swallow.content.button1";
       }
       program { name: "mouse_out2";
          signal: "mouse,out";
          source: "event2";
          action: STATE_SET "default" 0.0;
          transition: CUBIC_BEZIER 0.25 0.45 0.03 0.41 1.0;
-         target: "actionbtn1";
+         target: "elm.swallow.content.button1";
       }
    }
 }
 
-group { name: "elm/popup/content/circle";
+group { name: "elm/popup/content/popup/circle";
    parts{
       part { name:"elm.swallow.content";
          type: SWALLOW;
