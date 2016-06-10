@@ -99,7 +99,7 @@ group { name: "elm/notify/bottom/popup/circle";
          after: "hide_effect_done";
       }
       program { name: "hide_effect_done";
-         action: SIGNAL_EMIT "elm,state,hide,finished" "elm";
+         action: SIGNAL_EMIT "elm,action,hide,finished" "elm";
       }
    }
 }
@@ -180,7 +180,7 @@ group { name: "elm/notify/bottom/toast/circle";
          after: "hide_effect_done";
       }
       program { name: "hide_effect_done";
-         action: SIGNAL_EMIT "elm,state,hide,finished" "elm";
+         action: SIGNAL_EMIT "elm,action,hide,finished" "elm";
       }
    }
 }
@@ -223,7 +223,7 @@ group { name: "elm/notify/block_events/popup/circle";
          after: "fade_out_finished";
       }
       program { name: "fade_out_finished";
-         action: SIGNAL_EMIT "elm,state,hide,finished" "elm";
+         action: SIGNAL_EMIT "elm,action,hide,finished" "elm";
       }
       program { name: "block_clicked";
          signal: "mouse,clicked,1";
