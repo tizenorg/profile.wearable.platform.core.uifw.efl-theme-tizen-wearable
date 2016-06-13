@@ -1,9 +1,9 @@
-Name:          efl-theme-tizen-wearable
+ame:          efl-theme-tizen-wearable
 Summary:       Tizen theme files
 Version:       1.1.0
 Release:       1
 Group:         TO_BE/FILLED_IN
-License:       BSD 2-clause and Flora-1.1
+License:       BSD-2-Clause and Flora-1.1
 Source0:       %{name}-%{version}.tar.gz
 BuildRequires: model-build-features
 BuildRequires: edje-bin
