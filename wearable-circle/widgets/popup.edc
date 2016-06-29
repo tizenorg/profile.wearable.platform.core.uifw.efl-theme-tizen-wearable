@@ -15,6 +15,14 @@
  */
 
 group { name: "elm/notify/bottom/popup/circle";
+   alias: "elm/notify/bottom_left/popup/circle";
+   alias: "elm/notify/bottom_right/popup/circle";
+   alias: "elm/notify/top/popup/circle";
+   alias: "elm/notify/top_left/popup/circle";
+   alias: "elm/notify/top_right/popup/circle";
+   alias: "elm/notify/left/popup/circle";
+   alias: "elm/notify/right/popup/circle";
+   alias: "elm/notify/center/popup/circle";
    data.item: "hide_finished_signal" "on";
    parts {
       part { name: "base";
@@ -106,6 +114,14 @@ group { name: "elm/notify/bottom/popup/circle";
 }
 
 group { name: "elm/notify/bottom/toast/circle";
+   alias: "elm/notify/bottom_left/toast/circle";
+   alias: "elm/notify/bottom_right/toast/circle";
+   alias: "elm/notify/top/toast/circle";
+   alias: "elm/notify/top_left/toast/circle";
+   alias: "elm/notify/top_right/toast/circle";
+   alias: "elm/notify/left/toast/circle";
+   alias: "elm/notify/right/toast/circle";
+   alias: "elm/notify/center/toast/circle";
    data.item: "hide_finished_signal" "on";
    parts {
       part { name: "base";
