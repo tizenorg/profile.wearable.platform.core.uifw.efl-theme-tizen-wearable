@@ -15,6 +15,7 @@
  */
 
 group { name: "elm/notify/bottom/popup/circle";
+   data.item: "hide_finished_signal" "on";
    parts {
       part { name: "base";
          type: RECT;
@@ -105,6 +106,7 @@ group { name: "elm/notify/bottom/popup/circle";
 }
 
 group { name: "elm/notify/bottom/toast/circle";
+   data.item: "hide_finished_signal" "on";
    parts {
       part { name: "base";
          mouse_events: 0;
