@@ -24,8 +24,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-group { name: "elm/notify/bottom/popup";
-   alias: "elm/notify/bottom/toast";
+group { name: "elm/notify/bottom/popup/default";
+   alias: "elm/notify/bottom/popup/toast";
    parts {
       part { name: "base";
          type: RECT;
@@ -106,7 +106,7 @@ group { name: "elm/notify/bottom/popup";
 }
 
 // FIXME: block events may be not used
-group { name: "elm/notify/block_events/popup";
+group { name: "elm/notify/block_events/popup/default";
    parts {
       part { name: "block_events_color";
          type: RECT;
@@ -275,7 +275,7 @@ group { name: "elm/label/base/popup/no_block";
    }
 }
 
-group { name: "elm/popup/buttons1/default";
+group { name: "elm/popup/buttons1/popup/default";
    data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT;
    parts{
       part{ name:"actionbtn1";
@@ -286,7 +286,7 @@ group { name: "elm/popup/buttons1/default";
    }
 }
 
-group { name: "elm/popup/buttons2/default";
+group { name: "elm/popup/buttons2/popup/default";
    data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT;
    parts{
       part { name: "c_padding";
@@ -323,7 +323,7 @@ group { name: "elm/popup/buttons2/default";
    }
 }
 
-group { name: "elm/popup/content/default";
+group { name: "elm/popup/content/popup/default";
    parts{
       part { name:"elm.swallow.content";
          type: SWALLOW;
