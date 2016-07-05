@@ -353,19 +353,25 @@
 // Popup - Circle Toast
 #define POPUP_TOAST_BG_WIDTH_INC                           360
 #define POPUP_TOAST_BG_HEIGHT_INC                          118
+#define POPUP_TOAST_BG_MAX_WIDTH_INC                       360
 #define POPUP_TOAST_BG_MAX_HEIGHT_INC                      360
 #define POPUP_TOAST_TOP_BOTTOM_LINE_HEIGHT_INC             3
 #define POPUP_TOAST_PADDING_BOTTOM_SIZE_INC                42
 #define POPUP_TOAST_TEXT_LEFT_RIGHT_PADDING_WIDTH_INC      43
 #define POPUP_TOAST_TEXT_TOP_BOTTOM_PADDING_HEIGHT_INC     14
 #define POPUP_TOAST_TEXT_WIDTH_INC                         274
-#define POPUP_TOAST_TEXT_MAX_HEIGHT_INC                    242
+#define POPUP_TOAST_TEXT_MAX_HEIGHT_INC                    117
 #define POPUP_TOAST_TEXT_SIZE_INC                          32
 #define POPUP_TOAST_IMAGE_SIZE_INC                         164 164
+#define POPUP_TOAST_IMAGE_WIDTH_INC                        82
+#define POPUP_TOAST_IMAGE_HEIGHT_INC                       82
+#define POPUP_GRAPHIC_TOAST_LEFT_RIGHT_PADDING_WIDTH_INC   30
 #define POPUP_GRAPHIC_TOAST_PADDING_BOTTOM_SIZE_INC        20
-#define POPUP_GRAPHIC_TOAST_TEXT_WIDTH_INC                 198
+#define POPUP_GRAPHIC_TOAST_TEXT_WIDTH_INC                 300
 #define POPUP_GRAPHIC_TOAST_TEXT_HEIGHT_INC                78
+#define POPUP_GRAPHIC_TOAST_TEXT_MIN_HEIGHT_INC            43
 #define POPUP_GRAPHIC_TOAST_TEXT_SIZE_INC                  28
+#define POPUP_GRAPHIC_TOAST_IMAGE_TEXT_PADDING_HEIGHT_INC  16
 
 // ***************************** Progressbar **********************************/
 #define PROGRESS_BG_BORDER_SIZE_INC                        6 6 2 2
