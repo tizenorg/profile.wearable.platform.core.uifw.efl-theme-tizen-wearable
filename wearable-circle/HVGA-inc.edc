@@ -352,7 +352,7 @@
 
 // Popup - Circle Toast
 #define POPUP_TOAST_BG_WIDTH_INC                           360
-#define POPUP_TOAST_BG_HEIGHT_INC                          118
+#define POPUP_TOAST_BG_HEIGHT_INC                          360
 #define POPUP_TOAST_BG_MAX_HEIGHT_INC                      360
 #define POPUP_TOAST_TOP_BOTTOM_LINE_HEIGHT_INC             3
 #define POPUP_TOAST_PADDING_BOTTOM_SIZE_INC                42
@@ -362,9 +362,10 @@
 #define POPUP_TOAST_TEXT_MAX_HEIGHT_INC                    242
 #define POPUP_TOAST_TEXT_SIZE_INC                          32
 #define POPUP_TOAST_IMAGE_SIZE_INC                         164 164
-#define POPUP_GRAPHIC_TOAST_PADDING_BOTTOM_SIZE_INC        20
+#define POPUP_GRAPHIC_TOAST_PADDING_BOTTOM_SIZE_INC        16
+#define POPUP_GRAPHIC_TOAST_ICON_SIZE_INC                  82
 #define POPUP_GRAPHIC_TOAST_TEXT_WIDTH_INC                 198
-#define POPUP_GRAPHIC_TOAST_TEXT_HEIGHT_INC                78
+#define POPUP_GRAPHIC_TOAST_TEXT_HEIGHT_INC                262
 #define POPUP_GRAPHIC_TOAST_TEXT_SIZE_INC                  28
 
 // ***************************** Progressbar **********************************/
@@ -447,7 +448,7 @@
 #define POPUP_TOP_PADDING_HEIGHT_INC               60
 #define POPUP_TOP_PADDING_NOTITLE_HEIGHT_INC       76
 #define POPUP_BOTTOM_PADDING_HEIGHT_INC            100
-#define POPUP_LEFT_RIGHT_PADDING_WIDTH_INC         35
+#define POPUP_LEFT_RIGHT_PADDING_WIDTH_INC         33
 #define POPUP_TITLE_BOTTOM_PADDING_HEIGHT_INC      8
 #define POPUP_2BUTTON_LEFT_RIGHT_PADDING_WIDTH_INC 68
 // Action button layouts
@@ -822,19 +823,19 @@ styles {
      // (Changeable UI) base: "font=Tizen:style=Regular font_size="CHECK_TEXT_SIZE_INC" align=left color=#FFFFFF color_class=T092 wrap=mixed ellipsis=1.0 text_class=T092";
   }
   style { name: "popup_title_style";
-    base: "font=Tizen:style=Bold font_size=30 color=#74C3FCFF align=center ellipsis=1.0 text_class=tizen";
+    base: "font=Tizen:style=Medium font_size=30 color=#4DCFFFFF linesize=39 align=center ellipsis=1.0 text_class=tizen";
     // (Changeable UI) base: "font=Tizen:style=Bold font_size="POPUP_TITLE_TEXT_SIZE_INC" color=#FFFFFF color_class=T091 align=center ellipsis=1.0 text_class=T091";
   }
   style { name: "popup_body_default_font_style";
-    base: "font=Tizen:style=Light font_size=32 color=#F9F9F9FF wrap=mixed text_class=label";
+    base: "font=Tizen:style=Light font_size=32 color=#CCCCCCFF linesize=42 align=center wrap=mixed text_class=label";
     // (Changeable UI) base: "font=Tizen:style=Regular font_size="POPUP_BODY_TEXT_SIZE_INC" color=#FFFFFF color_class=T092 wrap=mixed text_class=T092";
   }
   style { name: "popup_toast_style";
-    base: "font=Tizen:style=Light font_size=32 color=#F9F9F9FF wrap=mixed align=center ellipsis=1.0 text_class=tizen";
+    base: "font=Tizen:style=Regular font_size=28 color=#FAFAFAFF linesize=37 wrap=mixed align=center ellipsis=1.0 text_class=tizen";
     // (Changeable UI) base: "font=Tizen:style=Regular font_size="POPUP_TOAST_TEXT_SIZE_INC" color=#FFFFFF color_class=T0910 wrap=mixed align=center ellipsis=1.0 text_class=T0910";
   }
   style { name: "popup_graphic_toast_style";
-    base: "font=Tizen:style=Light font_size=28 color=#0094FFFF wrap=mixed align=center ellipsis=1.0 text_class=tizen";
+    base: "font=Tizen:style=Regular font_size=32 color=#FA0A0AFF linesize=42 wrap=mixed align=center ellipsis=1.0 text_class=tizen";
     // (Changeable UI) base: "font=Tizen:style=Regular font_size="POPUP_GRAPHIC_TOAST_TEXT_SIZE_INC" color=#FFFFFF color_class=T099 wrap=mixed align=center ellipsis=1.0 text_class=T099";
   }
   style { name: "popup_help_style";
