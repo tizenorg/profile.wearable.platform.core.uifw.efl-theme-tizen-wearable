@@ -617,6 +617,8 @@
 //***************************  Slide script ********************************//
 #define SLIDING_PER_FPS 3
 #define SLIDING_FPS     60.0
+#define LIST_SLIDING_SPEED 0.009
+#define LIST_SLIDING_START_WAITING_TIME 0.8
 
 #define SLIDE_SCRIPT \
 script { \
@@ -663,65 +665,97 @@ script { \
 
 #define SCRIPT_START_SLIDE_TITLE \
 script { \
-   public sliding_timer; \
-   public end_timer; \
-   public text_w; \
-   public org_text_w; \
-   public clipper_w; \
-   public sliding_start; \
-   public get_size_over() { \
-      new x, y, w, w1, w2, w3, h; \
-      get_geometry(PART:"elm.text", x, y, w, h); \
-      get_geometry(PART:"bg", x, y, w1, h); \
-      get_geometry(PART:"elm.padding.left", x, y, w2, h); \
-      get_geometry(PART:"elm.padding.right", x, y, w3, h); \
-      if (w >= (w1 - (w2 + w3))) { \
-         set_int(sliding_start, 1); \
-      } else { \
-         set_int(sliding_start, 0); \
-       } \
+   public g_duration_1; \
+   public g_duration_2; \
+   public g_timer_id; \
+   public g_anim_id; \
+   public g_sliding_start; \
+   public g_text_size; \
+   public is_sliding; \
+   \
+   public init() { \
+      slide_stop(); \
+      set_float(g_duration_1, 0); \
+      set_float(g_duration_2, 0); \
+      set_int(g_timer_id, 0); \
+      set_int(g_anim_id, 0); \
+      set_int(g_sliding_start, 0); \
+      set_int(g_text_size, 0); \
+      set_int(is_sliding, 0); \
    } \
-   public get_width() { \
-      new x, y, w, h; \
-      get_geometry(PART:"elm.text", x, y, w, h); \
-      set_int(org_text_w, w); \
-      set_state(PART:"elm.text", "sliding", 0.0); \
-      get_geometry(PART:"elm.text", x, y, w, h); \
-      set_int(text_w, w); \
-      get_geometry(PART:"clipper", x, y, w, h); \
-      set_int(clipper_w, w); \
-   } \
-   public ender(val) { \
-      if (get_int(sliding_timer)) cancel_timer(get_int(sliding_timer)); \
-         set_int(sliding_timer, 0); \
-      if (get_int(end_timer)) cancel_timer(get_int(end_timer)); \
-         set_int(end_timer, 0); \
-      set_state(PART:"elm.text", "highlighted", 0.0); \
-   } \
-   public sliding(val) { \
-      get_size_over(); \
-      if (get_int(sliding_start) == 1) { \
-         if (val == 0) { \
-            get_width(); \
-            if (get_int(text_w) < get_int(org_text_w)) { \
-               ender(0); \
-               return; \
-              } \
-          } \
-         custom_state(PART:"elm.text", "sliding", 0.0); \
-         set_state_val(PART:"elm.text", STATE_REL1_OFFSET, val, 0); \
-         set_state_val(PART:"elm.text", STATE_REL2_OFFSET, val, -1); \
-         set_state(PART:"elm.text", "custom", 0.0); \
-         val -= SLIDING_PER_FPS; \
-          \
-         if (get_int(text_w) - get_int(clipper_w) + LIST_SLIDING_END_OFFSET < (val * -1)) { \
-            set_int(end_timer, timer(0.5, "ender", 1)); \
-        } else { \
-            set_int(sliding_timer, timer(1.0/SLIDING_FPS, "sliding", val)); \
-         } \
+   public set_disabled(val) {} \
+   public set_highlighted(val) {} \
+   public get_disabled() {} \
+   public get_highlighted() {} \
+   \
+   public slide_first_anim(val, Float:pos) { \
+      set_tween_state(PART:"elm.text", pos, "slide", 0.0, "slide_1", 0.0); \
+      if (pos >= 1.0) { \
+         cancel_anim(get_int(g_anim_id)); \
+         set_int(g_anim_id, anim(get_float(g_duration_2), "slide_second_anim", 1)); \
       } \
    } \
-} \
+   public slide_second_anim(val, Float:pos) { \
+      set_tween_state(PART:"elm.text", pos, "slide_2", 0.0, "default", 0.0); \
+      if (pos >= 1.0) { \
+         slide_stop(); \
+      } \
+   } \
+   public slide_first() { \
+      set_int(g_anim_id, anim(get_float(g_duration_1), "slide_first_anim", 1)); \
+   } \
+   public slide_start(val) { \
+      if (!get_int(is_sliding)) { \
+         set_int(is_sliding, 1); \
+         set_int(g_timer_id, timer(LIST_SLIDING_START_WAITING_TIME, "start", 1)); \
+      } \
+   } \
+   public start() { \
+      check_size(); \
+      if (get_int(g_sliding_start)) { \
+         set_state(PART:"elm.text", "slide", 0.0); \
+         get_duration(); \
+         custom_state(PART:"elm.padding.slide.end", "default", 0.0); \
+         set_state_val(PART:"elm.padding.slide.end", STATE_REL1_OFFSET, get_int(g_text_size), 0); \
+         set_state_val(PART:"elm.padding.slide.end", STATE_REL2_OFFSET, get_int(g_text_size)-1, -1); \
+         set_state(PART:"elm.padding.slide.end", "custom", 0.0); \
+         slide_first(); \
+      } \
+      else { \
+         slide_stop(); \
+      }\
+   } \
+   public slide_stop() { \
+      if (get_int(g_timer_id)) { \
+         cancel_timer(get_int(g_timer_id)); \
+         set_int(g_timer_id, 0); \
+      } \
+      if (get_int(g_anim_id)) { \
+         cancel_anim(get_int(g_anim_id)); \
+         set_int(g_anim_id, 0); \
+      } \
+      set_state(PART:"elm.text", "default", 0.0); \
+      set_int(g_sliding_start, 0); \
+      set_int(is_sliding, 0); \
+   } \
+   public check_size() { \
+      new x, y, w, w1, h; \
+      get_geometry(PART:"elm.text", x, y, w, h); \
+      get_geometry(PART:"clipper.text", x, y, w1, h); \
+      set_int(g_text_size, w1); \
+      if (w1 > 0 && w >= w1) \
+         set_int(g_sliding_start, 1); \
+      else \
+         set_int(g_sliding_start, 0); \
+   } \
+   public get_duration() { \
+      new x, y, w, w1, h; \
+      get_geometry(PART:"elm.text", x, y, w, h); \
+      get_geometry(PART:"clipper.text", x, y, w1, h); \
+      set_float(g_duration_1, w * LIST_SLIDING_SPEED); \
+      set_float(g_duration_2, w1 * LIST_SLIDING_SPEED); \
+   } \
+}
 
 #define SCRIPT_START_SLIDE \
 script { \
@@ -1476,37 +1510,19 @@ script { \
       target: "focus_part"; \
    } \
 
-#define PROGRAM_LIST_TITLE_EXPAND \
-   program { name: "title_expand_show"; \
-      action: STATE_SET "expanded" 0.0; \
-      target: "elm.padding.top"; \
-      target: "elm.padding.bottom"; \
-      target: "elm.padding.left"; \
-      target: "elm.padding.right"; \
-   } \
-   program { name: "title_expand_hide"; \
-      action: STATE_SET "default" 0.0; \
-      target: "elm.padding.top"; \
-      target: "elm.padding.bottom"; \
-      target: "elm.padding.left"; \
-      target: "elm.padding.right"; \
-   } \
-
 #define PROGRAM_LIST_TITLE_TEXT_SLIDE \
    program { name: "slide_start"; \
       source: "elm"; \
       signal: "elm,action,title,slide,start"; \
       script { \
-         run_program(PROGRAM:"title_expand_show"); \
-         set_int(sliding_timer, timer(0.01, "sliding", 0)); \
+         slide_start(0); \
       } \
    } \
    program { name: "slide_stop"; \
       source: "elm"; \
       signal: "elm,action,title,slide,stop"; \
       script { \
-         ender(0); \
-         run_program(PROGRAM:"title_expand_hide"); \
+         slide_stop(); \
       } \
    } \
 
@@ -1527,13 +1543,11 @@ script { \
       signal: "show"; \
       source: ""; \
       script { \
-         get_size_over(); \
-         if (get_int(sliding_start)) { \
-            set_state(PART:"fade_out", "default", 0.0); \
-            set_state(PART:"elm.text", "long_text_default", 0.0); \
+         check_size(); \
+         if (get_int(g_sliding_start)) { \
+            set_state(PART:"clipper.text", "default", 0.0); \
          } else { \
-            set_state(PART:"fade_out", "short_text", 0.0); \
-            set_state(PART:"elm.text", "default", 0.0); \
+            set_state(PART:"clipper.text", "short_text", 0.0); \
          } \
       } \
    } \
