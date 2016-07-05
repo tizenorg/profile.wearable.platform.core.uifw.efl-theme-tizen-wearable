@@ -253,11 +253,39 @@ group { name: "elm/notify/block_events/popup/circle";
 
 group { name: "elm/label/base/popup/default";
    parts {
+      part { name: "pad_t_l";
+         type: SPACER;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: POPUP_LEFT_RIGHT_PADDING_WIDTH_INC POPUP_TOP_PADDING_HEIGHT_INC;
+            rel2.relative: 0.0 0.0;
+            align: 0.0 0.0;
+            fixed: 1 1;
+         }
+      }
+      part { name: "pad_b_r";
+         type: SPACER;
+         scale: 1;
+         description { state: "default" 0.0;
+            min: POPUP_LEFT_RIGHT_PADDING_WIDTH_INC POPUP_TOP_PADDING_HEIGHT_INC;
+            rel1.relative: 1.0 1.0;
+            align: 1.0 1.0;
+            fixed: 1 1;
+         }
+      }
       part { name: "elm.text";
          type: TEXTBLOCK;
          mouse_events: 0;
          scale: 1;
          description { state: "default" 0.0;
+            rel1 {
+               relative: 1.0 1.0;
+               to: "pad_t_l";
+            }
+            rel2 {
+               relative: 0.0 0.0;
+               to: "pad_b_r";
+            }
             text {
                align: 0 0;
                style: "popup_body_default_font_style";
