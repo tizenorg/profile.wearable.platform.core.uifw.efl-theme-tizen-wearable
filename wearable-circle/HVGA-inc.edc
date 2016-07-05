@@ -682,7 +682,7 @@ styles {
     STYLE_TAG_MATCH
   }
   style { name: "list_text_title_normal";
-    base: "font=Tizen:style=Bold font_size="LIST_TEXT_TITLE_SIZE_INC" color=#0094ffff text_class=tizen";
+    base: "font=Tizen:style=Medium font_size="LIST_TEXT_TITLE_SIZE_INC" color=#0094ffff text_class=tizen";
     STYLE_TAG_MATCH
   }
   style { name: "list_text_main_normal";
