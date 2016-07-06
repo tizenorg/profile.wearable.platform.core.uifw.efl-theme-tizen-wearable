@@ -1179,6 +1179,10 @@ group { name: "elm/check/base/on&off";
               }
             else if (get_int(check_visible) == 1)
               {
+                 stop_program(PROGRAM:"start_check_off_show_effect");
+                 stop_program(PROGRAM:"end_check_off_show_effect");
+                 stop_program(PROGRAM:"bg_off_show_effect");
+                 stop_program(PROGRAM:"bg_off_draw_effect");
                  run_program(PROGRAM:"start_check_on_show_effect");
                  run_program(PROGRAM:"bg_on_show_effect");
                  run_program(PROGRAM:"bg_on_draw_effect");
@@ -1208,6 +1212,10 @@ group { name: "elm/check/base/on&off";
               }
             else if (get_int(check_visible) == 1)
               {
+                 stop_program(PROGRAM:"start_check_on_show_effect");
+                 stop_program(PROGRAM:"end_check_on_show_effect");
+                 stop_program(PROGRAM:"bg_on_show_effect");
+                 stop_program(PROGRAM:"bg_on_draw_effect");
                  run_program(PROGRAM:"start_check_off_show_effect");
                  run_program(PROGRAM:"bg_off_show_effect");
                  run_program(PROGRAM:"bg_off_draw_effect");
@@ -1611,6 +1619,10 @@ group { name: "elm/check/base/on&off/list";
               }
             else if (get_int(check_visible) == 1)
               {
+                 stop_program(PROGRAM:"start_check_off_show_effect");
+                 stop_program(PROGRAM:"end_check_off_show_effect");
+                 stop_program(PROGRAM:"bg_off_show_effect");
+                 stop_program(PROGRAM:"bg_off_draw_effect");
                  run_program(PROGRAM:"start_check_on_show_effect");
                  run_program(PROGRAM:"bg_on_show_effect");
                  run_program(PROGRAM:"bg_on_draw_effect");
@@ -1640,6 +1652,10 @@ group { name: "elm/check/base/on&off/list";
               }
             else if (get_int(check_visible) == 1)
               {
+                 stop_program(PROGRAM:"start_check_on_show_effect");
+                 stop_program(PROGRAM:"end_check_on_show_effect");
+                 stop_program(PROGRAM:"bg_on_show_effect");
+                 stop_program(PROGRAM:"bg_on_draw_effect");
                  run_program(PROGRAM:"start_check_off_show_effect");
                  run_program(PROGRAM:"bg_off_show_effect");
                  run_program(PROGRAM:"bg_off_draw_effect");
