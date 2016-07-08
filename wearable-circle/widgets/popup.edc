@@ -332,7 +332,7 @@ group { name: "elm/label/base/popup/no_block";
 }
 
 group { name: "elm/popup/buttons1/popup/circle";
-   data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT_INC;
+   data.item: "action_area_height" POPUP_BUTTON_CIRCLE_DEFAULT_ACTION_AREA_HEIGHT_INC;
    parts{
       part{ name: "elm.swallow.content.button1";
          type: SWALLOW;
@@ -349,7 +349,7 @@ group { name: "elm/popup/buttons1/popup/circle";
 }
 
 group { name: "elm/popup/buttons2/popup/circle";
-   data.item: "action_area_height" POPUP_BUTTON_DEFAULT_ACTION_AREA_HEIGHT_INC;
+   data.item: "action_area_height" POPUP_BUTTON_CIRCLE_DEFAULT_ACTION_AREA_HEIGHT_INC;
    parts{
       part{ name: "elm.swallow.content.button1";
          type: SWALLOW;
