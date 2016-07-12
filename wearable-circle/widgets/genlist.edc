@@ -1027,6 +1027,7 @@ group { name: "elm/genlist/item/2text/default";
          description {
             state: "default" 0.0;
             align: 0.5 1.0;
+            fixed: 0 1;
             min: 0 LIST_TEXT_SUB_HEIGHT_INC;
             rel1 {
                to_x: "elm.padding.left";
@@ -1226,6 +1227,7 @@ group { name: "elm/genlist/item/2text.1icon/default";
          description {
             state: "default" 0.0;
             align: 0.5 1.0;
+            fixed: 0 1;
             min: 0 LIST_TEXT_SUB_HEIGHT_INC;
             rel1 {
                to_x: "elm.padding.icon";
@@ -1425,6 +1427,7 @@ group { name: "elm/genlist/item/2text.1icon.1/default";
          description {
             state: "default" 0.0;
             align: 0.5 1.0;
+            fixed: 0 1;
             min: 0 LIST_TEXT_SUB_HEIGHT_INC;
             rel1 {
                to_x: "elm.padding.left";
@@ -1612,6 +1615,7 @@ group { name: "elm/genlist/item/2text.1icon.divider/default";
          description {
             state: "default" 0.0;
             align: 0.5 1.0;
+            fixed: 0 1;
             min: 0 LIST_TEXT_SUB_HEIGHT_INC;
             rel1 {
                to_x: "elm.padding.left";
