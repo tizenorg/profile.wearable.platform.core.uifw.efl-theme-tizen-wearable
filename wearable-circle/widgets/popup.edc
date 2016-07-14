@@ -251,7 +251,7 @@ group { name: "elm/notify/block_events/popup/circle";
    }
 }
 
-group { name: "elm/notify/block_events/toast/circle";
+group { name: "elm/notify/block_events/popup/toast/circle";
    inherit: "elm/notify/block_events/popup/circle";
 
    parts {
