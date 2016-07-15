@@ -280,6 +280,7 @@ group { name: "elm/genlist/item/title/default";
       )
    }
    programs {
+      PROGRAM_LIST_DEFAULT(target: "elm.text"; target: "clipper.text";)
       PROGRAM_LIST_TITLE_FADEOUT_SET
       PROGRAM_LIST_TITLE_TEXT_SLIDE
    }
@@ -372,6 +373,7 @@ group { name: "elm/genlist/item/title_with_groupindex/default";
       )
    }
    programs {
+      PROGRAM_LIST_DEFAULT(target: "elm.text"; target: "clipper.text";)
       PROGRAM_LIST_TITLE_FADEOUT_SET
       PROGRAM_LIST_TITLE_TEXT_SLIDE
    }
