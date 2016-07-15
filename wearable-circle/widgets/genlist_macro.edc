@@ -1551,6 +1551,18 @@ script { \
          } \
       } \
    } \
+   program { name: "text_fadeout_reset"; \
+      signal: "resize"; \
+      source: ""; \
+      script { \
+         check_size(); \
+         if (get_int(g_sliding_start)) { \
+            set_state(PART:"clipper.text", "default", 0.0); \
+         } else { \
+            set_state(PART:"clipper.text", "short_text", 0.0); \
+         } \
+      } \
+   } \
 
 #define PROGRAM_LIST_1TEXT_FADEOUT_SET \
    program { name: "text_fadeout_set"; \
