@@ -836,11 +836,11 @@ styles {
     // (Changeable UI) base: "font=Tizen:style=Regular font_size="POPUP_BODY_TEXT_SIZE_INC" color=#FFFFFF color_class=T092 wrap=mixed text_class=T092";
   }
   style { name: "popup_toast_style";
-    base: "font=Tizen:style=Light font_size=32 color=#F9F9F9FF wrap=mixed align=center ellipsis=1.0 text_class=tizen";
+    base: "font=Tizen:style=Regular font_size=28 color=#FAFAFAFF wrap=mixed align=center ellipsis=1.0 text_class=tizen";
     // (Changeable UI) base: "font=Tizen:style=Regular font_size="POPUP_TOAST_TEXT_SIZE_INC" color=#FFFFFF color_class=T0910 wrap=mixed align=center ellipsis=1.0 text_class=T0910";
   }
   style { name: "popup_graphic_toast_style";
-    base: "font=Tizen:style=Light font_size=28 color=#0094FFFF wrap=mixed align=center ellipsis=1.0 text_class=tizen";
+    base: "font=Tizen:style=Regular font_size=32 color=#FAFAFAFF wrap=mixed align=center ellipsis=1.0 text_class=tizen";
     // (Changeable UI) base: "font=Tizen:style=Regular font_size="POPUP_GRAPHIC_TOAST_TEXT_SIZE_INC" color=#FFFFFF color_class=T099 wrap=mixed align=center ellipsis=1.0 text_class=T099";
   }
   style { name: "popup_help_style";
